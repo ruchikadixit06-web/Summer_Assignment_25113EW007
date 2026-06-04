@@ -7,7 +7,7 @@ int main()
  double sum;
  printf("Enter upper limit to find armstrong numbers");
  scanf("%d",&n);
-
+//To print range of armstrong numbers
  for(i=1;i<=n;i++){
  count=0;
  sum=0;
