@@ -1,7 +1,8 @@
 #include <stdio.h>
 #define MAX_ITEMS 50
 
-struct Item {
+struct Item 
+{
     int id;
     char name[50];
     int quantity;
@@ -10,7 +11,7 @@ struct Item {
 
 int main() {
     struct Item inventory[MAX_ITEMS];
-    int item_count=0, choice, search_id, found_idx;
+    int item_count = 0, choice, search_id, found_idx;
 
     do {
         printf("\n--- Corporate Inventory Management System ---\n");
@@ -18,19 +19,19 @@ int main() {
         printf("2. Display All Stock Inventory Items\n");
         printf("3. Query Particular Item Stock\n");
         printf("4. Exit\n");
-        printf("Enter selection choice:");
-        scanf("%d",&choice);
+        printf("Enter selection choice: ");
+        scanf("%d", &choice);
 
         switch (choice) {
             case 1:
                 if (item_count < MAX_ITEMS) {
-                    printf("Assign unique Product Item ID:");
+                    printf("Assign unique Product Item ID: ");
                     scanf("%d", &inventory[item_count].id);
-                    printf("Enter Product Description Name:");
+                    printf("Enter Product Description Name: ");
                     scanf(" %[^\n]s", inventory[item_count].name);
                     printf("Enter Available Quantity Count: ");
                     scanf("%d", &inventory[item_count].quantity);
-                    printf("Enter Single Unit Base Price ($):");
+                    printf("Enter Single Unit Base Price ($): ");
                     scanf("%f", &inventory[item_count].price);
                     item_count++;
                     printf("Product registered onto store inventory.\n");
@@ -50,10 +51,10 @@ int main() {
                 }
                 break;
             case 3:
-                printf("Enter Target Product Item ID:");
-                scanf("%d",&search_id);
+                printf("Enter Target Product Item ID: ");
+                scanf("%d", &search_id);
                 found_idx = -1;
-                for (int i=0; i < item_count; i++) {
+                for (int i = 0; i < item_count; i++) {
                     if (inventory[i].id == search_id) {
                         found_idx = i;
                         break;
